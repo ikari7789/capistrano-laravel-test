@@ -1,9 +1,14 @@
 REPOSITORY_URL=$(git remote get-url origin)
 
 LARAVEL_URLS=(
+    "https://github.com/laravel/laravel/archive/v3.0.4.tar.gz"
+    "https://github.com/laravel/laravel/archive/v3.1.9.tar.gz"
+    "https://github.com/laravel/laravel/archive/v3.2.14.tar.gz"
+    "https://github.com/laravel/laravel/archive/v4.0.9.tar.gz"
+    "https://github.com/laravel/laravel/archive/v4.1.27.tar.gz"
     "https://github.com/laravel/laravel/archive/v4.2.11.tar.gz"
     "https://github.com/laravel/laravel/archive/v5.0.22.tar.gz"
-    "https://github.com/laravel/laravel/archive/v5.1.11.tar.gz"
+    "https://github.com/laravel/laravel/archive/v5.1.33.tar.gz"
     "https://github.com/laravel/laravel/archive/v5.2.31.tar.gz"
     "https://github.com/laravel/laravel/archive/v5.3.16.tar.gz"
 )
