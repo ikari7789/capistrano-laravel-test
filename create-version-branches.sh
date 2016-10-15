@@ -34,14 +34,6 @@ for url in ${LARAVEL_URLS[@]}; do
         git add --all
         git commit -m 'Initial commit'
 
-        # Add the skeleton Capistrano configuration
-        # echo 'no' to avoid the Harrow setup
-        echo 'no' | cap install
-
-        # Commit the skeleton Capistrano configuration
-        git add --all
-        git commit -m 'Added Capistrano configuration files'
-
         # Upload to the repository and verwrite any existing branch
         git push --force --set-upstream origin ${branch}
     popd
