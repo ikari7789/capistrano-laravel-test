@@ -8,7 +8,7 @@ set :repo_url, 'git://github.com/ikari7789/capistrano-laravel-test.git'
 set :branch, '5.2'
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/var/www/laravel_5_2/deploy'
+# set :deploy_to, "/var/www/my_app_name"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -34,8 +34,7 @@ set :deploy_to, '/var/www/laravel_5_2/deploy'
 
 set :default_env, {
   'PATH'           => "/usr/local/phpenv/shims:/usr/local/phpenv/bin:$PATH",
-  'PHPENV_VERSION' => '7.0.15'
+  'RBENV_VERSION' => '7.0.15'
 }
 
 set :laravel_version, 5.2
-set :laravel_server_user, 'vagrant'

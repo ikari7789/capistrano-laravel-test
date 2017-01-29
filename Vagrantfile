@@ -37,12 +37,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "./laravel/4_2", "/var/www/laravel_4_2"
-  config.vm.synced_folder "./laravel/5_0", "/var/www/laravel_5_0"
-  config.vm.synced_folder "./laravel/5_1", "/var/www/laravel_5_1"
-  config.vm.synced_folder "./laravel/5_2", "/var/www/laravel_5_2"
-  config.vm.synced_folder "./laravel/5_3", "/var/www/laravel_5_3"
-  config.vm.synced_folder "./laravel/5_4", "/var/www/laravel_5_4"
+  # config.vm.synced_folder "../data", "/vagrant_data"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -157,13 +152,16 @@ Vagrant.configure("2") do |config|
     # Install bundler
     gem install bundler
 
-    # Setup SSH keys for releasing
+    # Install apache2
+    apt install -y apache2
+
+    # Setup vagrant user for deploying
     ssh-keygen -t rsa -b 4096 -f /home/vagrant/.ssh/id_rsa -q -N ""
     chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
     chown vagrant:vagrant /home/vagrant/.ssh/id_rsa.pub
     cat /home/vagrant/.ssh/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
-
-    # Add www-user for testing setfacl
-    /usr/sbin/useradd www-data
+    usermod -a -g www-data vagrant
+    chown -R root:www-data /var/www
+    chmod -R g+rw /var/www
   SHELL
 end

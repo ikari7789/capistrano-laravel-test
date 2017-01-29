@@ -17,7 +17,6 @@ fi
 
 for test in ${TESTS[@]}; do
     pushd laravel/${test}
-        rm -rf deploy/{current,releases,repo,shared,revision.log}
         cap --trace test deploy
     popd
 done
