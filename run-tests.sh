@@ -16,7 +16,7 @@ fi
 # gem install capistrano-laravel
 
 for test in ${TESTS[@]}; do
-    pushd laravle/${test}
+    pushd laravel/${test}
         rm -rf deploy/{current,releases,repo,shared,revision.log}
         cap --trace test deploy
     popd
