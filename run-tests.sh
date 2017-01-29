@@ -1,11 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
 TESTS=(
-    4.2
-    5.0
-    5.1
-    5.2
-    5.3
+    "4_2"
+    "5_0"
+    "5_1"
+    "5_2"
+    "5_3"
+    "5_4"
 )
 
 if [ ! -z $1 ]; then
@@ -15,8 +16,8 @@ fi
 # gem install capistrano-laravel
 
 for test in ${TESTS[@]}; do
-    pushd ${test}
+    pushd laravle/${test}
         rm -rf deploy/{current,releases,repo,shared,revision.log}
-        cap test deploy
+        cap --trace test deploy
     popd
 done

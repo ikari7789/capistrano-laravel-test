@@ -10,7 +10,8 @@ LARAVEL_URLS=(
     "https://github.com/laravel/laravel/archive/v5.0.22.tar.gz"
     "https://github.com/laravel/laravel/archive/v5.1.33.tar.gz"
     "https://github.com/laravel/laravel/archive/v5.2.31.tar.gz"
-    "https://github.com/laravel/laravel/archive/v5.3.16.tar.gz"
+    "https://github.com/laravel/laravel/archive/v5.3.30.tar.gz"
+    "https://github.com/laravel/laravel/archive/v5.4.3.tar.gz"
 )
 
 for url in ${LARAVEL_URLS[@]}; do

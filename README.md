@@ -5,6 +5,8 @@ Laravel application for testing the Capistrano laravel plugin.
 
 ```shell
 vagrant up
+vagrant ssh
+cd /vagrant
 ./run-tests.sh
 ```
 
@@ -12,5 +14,7 @@ vagrant up
 
 ```shell
 vagrant up
+vagrant ssh
+cd /vagrant
 ./run-tests.sh {version: 4.2, 5.0, 5.1, 5.2, 5.3}
 ```
